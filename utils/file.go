@@ -21,6 +21,21 @@ var file_mode_map = map[string]int{
 	"APPEND":    os.O_APPEND,
 }
 
+
+// create file
+func create(file_name string){
+
+	// use os.Create() to create a file if doesn't exist.
+
+	file, err := os.Create(file_name)
+	if err != nil{
+		fmt.Println("Error creating file:", err)
+		return
+	}
+	defer file.Close()
+	fmt.Println("File Created Successfully!")
+}
+
 // open file utils module; add to utils package;
 func write(file_name string){
 
@@ -47,16 +62,3 @@ func write(file_name string){
 	defer file.Close()
 }
 
-// create file
-func create(file_name string){
-
-	// use os.Create() to create a file if doesn't exist.
-
-	file, err := os.Create(file_name)
-	if err != nil{
-		fmt.Println("Error creating file:", err)
-		return
-	}
-	defer file.Close()
-	fmt.Println("File Created Successfully!")
-}
