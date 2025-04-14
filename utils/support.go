@@ -60,3 +60,7 @@ func encrypt_password(pass string) string{
 	encrypted_password := hash.Write(encoded_str)
 	return encrypted_password
 }
+
+// TODO: remember that the encrypted hash should match when Authing.
+
+

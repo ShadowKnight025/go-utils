@@ -3,7 +3,7 @@ package utils
 /*
    TODO:
    Replace print statements with logging.
-   Add methods for Read, RDWR mode, Append.
+   Add methods for RDWR mode, Append.
    Maybe add methods for symlinks as well.
    
 */
@@ -62,3 +62,13 @@ func write(file_name string){
 	defer file.Close()
 }
 
+func read(file_name string){
+
+	file, err := os.OpenFile(file_name, file_mode_map["READ"], os.ModePerm)
+	if err != nil{
+		fmt.Println("Error opening file: ", err)
+		return 
+	}
+	defer file.Close()
+	return file.readlines()
+}
