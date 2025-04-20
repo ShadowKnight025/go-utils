@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"context"
 	"github.com/redis/go-redis/v9"
-	
+
 )
 
 _CONN_STR := os.Getenv("redcons") or ""
