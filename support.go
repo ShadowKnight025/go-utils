@@ -14,7 +14,7 @@ import(
 func gen_id() string{
 	// randomly generate id
 	// yoinked from: https://stackoverflow.com/questions/22892120/how-to-generate-a-random-string-of-a-fixed-length-in-go
-	
+
 	const letterBytes = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 	const (
 		letterIdxBits = 6                    // 6 bits to represent a letter index
@@ -37,7 +37,7 @@ func gen_id() string{
 		cache >>= letterIdxBits
 		remain--
 	}
-	
+
 	return strings.ToLower(string(id))
 }
 

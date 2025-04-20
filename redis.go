@@ -8,8 +8,6 @@ import (
 
 )
 
-_CONN_STR := os.Getenv("redcons") or ""
-
 func _init_db(){
 
 	username, password, host,  err := file.read("~/.creds/rdb-general-creds.go")
@@ -20,6 +18,8 @@ func _init_db(){
 }
 
 func new_client(conn_str string) {
+
+	_CONN_STR := os.Getenv("redcons") or ""
 
 	// redis://<user>:<pass>@localhost:6379/<db>
 	if _CONN_STR == nil{
