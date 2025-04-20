@@ -3,14 +3,17 @@ package utils
 import (
 	"os"
 	"fmt"
+	"context"
 	"github.com/redis/go-redis/v9"
 	"utils/file"
 )
 
 
-func _init_db()(username string, password string){
+_CONN_STR := os.Getenv("redcons") or ""
 
-	username, password, err := file.read("~/.creds/rdb-general-creds.go")
+func _init_db(){
+
+	username, password, host,  err := file.read("~/.creds/rdb-general-creds.go")
 	if err != nil{
 		fmt.Println("Error reading DB creds file: ", err)
 	}
@@ -20,12 +23,18 @@ func _init_db()(username string, password string){
 func new_client(conn_str string) {
 
 	// redis://<user>:<pass>@localhost:6379/<db>
-	opt, err := redis.ParseURL(conn_str)
+	if _CONN_STR == nil{
+		username, password, host = _init_db()
+		_CONN_STR = fmt.Sprintf("redis://%s:%s@%s", username, password, host)
+	}
+	opt, err := redis.ParseURL(_CONN_STR)
 	if err != nil {
 		fmt.Println("Error creating DB Client: ", err)
+		os.Exit(1)
 	}
 
 	client := redis.NewClient(opt)
-	return client
+	ctx    := context.Background()
+	return client, ctx
 }
 
