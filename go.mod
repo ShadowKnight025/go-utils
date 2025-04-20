@@ -2,6 +2,7 @@ module utils
 
 go 1.23.5
 
+require utils/file 
 require github.com/k0kubun/pp/v3 v3.4.1
 require github.com/redis/go-redis/v9
 
