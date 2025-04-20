@@ -19,7 +19,7 @@ func _init_db(){
 
 func new_client(conn_str string) {
 
-	_CONN_STR := os.Getenv("redcons") or ""
+	_CONN_STR := os.Getenv("redcons")
 
 	// redis://<user>:<pass>@localhost:6379/<db>
 	if _CONN_STR == nil{
