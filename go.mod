@@ -2,9 +2,9 @@ module utils
 
 go 1.23.5
 
-require github.com/ShadowKnight025/go-utils v0.0.1
+require github.com/ShadowKnight025/go-utils v1.2.3
 require github.com/k0kubun/pp/v3 v3.4.1
-require github.com/redis/go-redis/v9
+require github.com/redis/go-redis/v9 v9.7.3
 
 require (
 	github.com/mattn/go-colorable v0.1.13 // indirect
