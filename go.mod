@@ -1,14 +1,10 @@
-module utils
+module github.com/ShadowKnight025/go-utils
 
 go 1.23.5
 
-require github.com/ShadowKnight025/go-utils v1.2.3
-require github.com/k0kubun/pp/v3 v3.4.1
 require github.com/redis/go-redis/v9 v9.7.3
 
 require (
-	github.com/mattn/go-colorable v0.1.13 // indirect
-	github.com/mattn/go-isatty v0.0.16 // indirect
-	golang.org/x/sys v0.5.0 // indirect
-	golang.org/x/text v0.19.0 // indirect
+	github.com/cespare/xxhash/v2 v2.2.0 // indirect
+	github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f // indirect
 )

@@ -8,7 +8,6 @@ import (
 	"utils/file"
 )
 
-
 _CONN_STR := os.Getenv("redcons") or ""
 
 func _init_db(){
