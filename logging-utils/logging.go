@@ -1,4 +1,4 @@
-package logging-utils
+package ulogging
 
 import (
 	"log"

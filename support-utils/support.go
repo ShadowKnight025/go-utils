@@ -1,4 +1,4 @@
-package support-utils
+package usupport
 
 import(
 	"strings"

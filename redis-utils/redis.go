@@ -1,4 +1,4 @@
-package redis-utils
+package uredis
 
 import (
 	"os"
