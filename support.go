@@ -1,7 +1,6 @@
 package utils
 
 import(
-	"errors"
 	"strings"
 	"math/rand"
 	"crypto/sha256"
@@ -41,9 +40,7 @@ func gen_id() string{
 // move to utils
 func encrypt_password(pass string) string{
 	encoded_str := []byte(pass)
-	hash        := sha256.New()
-
-	encrypted_password, _ := hash.Write(encoded_str)
+	encrypted_password := Sha256.Sum256(encoded_str)
 	return encrypted_password
 }
 
