@@ -1,7 +1,6 @@
 package utils
 
 import(
-	"fmt"
 	"errors"
 	"os"
 	"strings"
@@ -22,7 +21,7 @@ func gen_id() string{
 		letterIdxMax  = 63 / letterIdxBits   // # of letter indices fitting in 63 bits
 	)
 
-	const n int = 6
+	const n uint8 = 6
 
 	id := make([]byte, n)
     // A rand.Int63() generates 63 random bits, enough for letterIdxMax letters!
@@ -31,7 +30,7 @@ func gen_id() string{
 			cache, remain = rand.Int63(), letterIdxMax
 		}
 		if idx := int(cache & letterIdxMask); idx < len(letterBytes) {
-			b[i] = letterBytes[idx]
+			id[i] = letterBytes[idx]
 			i--
 		}
 		cache >>= letterIdxBits
@@ -42,22 +41,11 @@ func gen_id() string{
 }
 
 // move to utils
-func no_dupe_ids(new_user_id string) (string){
-
-	user := employee_table.get(new_user_id)
-	if user{
-		new_id := _gen_id()    // gen new id & re-check for duplicate entry in db.
-		_no_dupe_ids(new_id)
-	}
-	return new_user_id
-}
-
-// move to utils
 func encrypt_password(pass string) string{
 	encoded_str := []byte(pass)
 	hash        := sha256.New()
 
-	encrypted_password := hash.Write(encoded_str)
+	_, encrypted_password := hash.Write(encoded_str)
 	return encrypted_password
 }
 

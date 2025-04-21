@@ -10,7 +10,6 @@ package utils
 
 import(
 	"fmt"
-	"log"
 	"os"
 )
 
@@ -70,5 +69,5 @@ func read(file_name string){
 		return 
 	}
 	defer file.Close()
-	return file.readlines()
+	return file.Read()
 }

@@ -16,7 +16,7 @@ import (
 //	return username, password
 //}
 
-func new_client(conn_str string) {
+func new_client(conn_str string) (*redis.Client, context.Context) {
 
 	_CONN_STR := os.Getenv("redcons")
 
