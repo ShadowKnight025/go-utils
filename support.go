@@ -38,7 +38,7 @@ func gen_id() string{
 }
 
 // move to utils
-func encrypt_password(pass string) string{
+func encrypt_password(pass string) [32]byte{
 	encoded_str := []byte(pass)
 	encrypted_password := sha256.Sum256(encoded_str)
 	return encrypted_password
