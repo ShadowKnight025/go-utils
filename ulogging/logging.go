@@ -1,4 +1,4 @@
-package ulogging
+package logging
 
 import (
 	"log"
