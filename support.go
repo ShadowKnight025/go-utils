@@ -40,7 +40,7 @@ func gen_id() string{
 // move to utils
 func encrypt_password(pass string) string{
 	encoded_str := []byte(pass)
-	encrypted_password := Sha256.Sum256(encoded_str)
+	encrypted_password := sha256.Sum256(encoded_str)
 	return encrypted_password
 }
 
