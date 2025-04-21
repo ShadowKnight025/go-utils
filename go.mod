@@ -1,4 +1,4 @@
-module github.com/ShadowKnight025/go-utils
+module go-utils
 
 go 1.23.5
 
