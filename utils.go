@@ -8,3 +8,9 @@ import(
 	"github.com/ShadowKnight025/go-utils/usupport"
 )
 
+
+func utils(){
+
+	uredis := uredis.new_client()
+}
+
