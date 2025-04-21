@@ -61,13 +61,12 @@ func write(file_name string){
 	defer file.Close()
 }
 
-func read(file_name string){
+func read(file_name string, buffer []byte){
 
 	file, err := os.OpenFile(file_name, file_mode_map["READ"], os.ModePerm)
 	if err != nil{
 		fmt.Println("Error opening file: ", err)
-		return 
 	}
 	defer file.Close()
-	return file.Read()
+	file.Read(buffer)
 }

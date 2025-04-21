@@ -2,9 +2,7 @@ package utils
 
 import(
 	"errors"
-	"os"
 	"strings"
-	"strconv"
 	"math/rand"
 	"crypto/sha256"
 )
@@ -45,7 +43,7 @@ func encrypt_password(pass string) string{
 	encoded_str := []byte(pass)
 	hash        := sha256.New()
 
-	_, encrypted_password := hash.Write(encoded_str)
+	encrypted_password, _ := hash.Write(encoded_str)
 	return encrypted_password
 }
 
