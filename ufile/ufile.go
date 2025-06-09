@@ -1,4 +1,4 @@
-package utils
+package ufile
 
 /*
    TODO:
@@ -22,7 +22,7 @@ var file_mode_map = map[string]int{
 
 
 // create file
-func create(file_name string){
+func Create(file_name string){
 
 	// use os.Create() to create a file if doesn't exist.
 
@@ -36,7 +36,7 @@ func create(file_name string){
 }
 
 // open file utils module; add to utils package;
-func write(file_name string){
+func Write(file_name string){
 
 	/*
              defer keyword allows a function to postpone
@@ -61,7 +61,7 @@ func write(file_name string){
 	defer file.Close()
 }
 
-func read(file_name string, buffer []byte){
+func Read(file_name string, buffer []byte){
 
 	file, err := os.OpenFile(file_name, file_mode_map["READ"], os.ModePerm)
 	if err != nil{

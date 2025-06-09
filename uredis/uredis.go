@@ -1,4 +1,4 @@
-package utils
+package uredis
 
 import (
 	"os"
@@ -16,7 +16,7 @@ import (
 //	return username, password
 //}
 
-func new_client(conn_str string) (*redis.Client, context.Context) {
+func New_Client(conn_str string) (*redis.Client, context.Context) {
 
 	_CONN_STR := os.Getenv("redcons")
 

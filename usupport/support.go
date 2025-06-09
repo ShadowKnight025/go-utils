@@ -1,4 +1,4 @@
-package support
+package usupport
 
 import(
 	"strings"
@@ -7,7 +7,7 @@ import(
 )
 
 
-func gen_id() string{
+func Gen_Id() string{
 	// randomly generate id
 	// yoinked from: https://stackoverflow.com/questions/22892120/how-to-generate-a-random-string-of-a-fixed-length-in-go
 
@@ -38,7 +38,7 @@ func gen_id() string{
 }
 
 // move to utils
-func encrypt_password(pass string) [32]byte{
+func Encrypt_Password(pass string) [32]byte{
 	encoded_str := []byte(pass)
 	encrypted_password := sha256.Sum256(encoded_str)
 	return encrypted_password

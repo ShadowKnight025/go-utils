@@ -1,11 +1,11 @@
-package utils
+package ulogging
 
 import (
 	"log"
 	"os"
 )
 
-func basic_logging(filename string){
+func Basic_Logging(filename string){
 	file, err := os.OpenFile(filename, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0666)
 	if err != nil{
 		log.Fatal(err)
