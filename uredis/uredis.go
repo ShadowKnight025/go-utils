@@ -1,4 +1,4 @@
-package uredis
+package utils
 
 import (
 	"os"
